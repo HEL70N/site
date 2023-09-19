@@ -1,5 +1,5 @@
 <?php
-namespace View;
+namespace Code\View;
 
 class View
 {
@@ -18,7 +18,7 @@ class View
 
     public function __get($index)
     {
-        $this->data[$index];   
+        return $this->data[$index];   
     }
 
     public function render()
@@ -26,7 +26,7 @@ class View
         ob_start();
 
         require VIEWS_PATH . $this->view;
-        
-        require ob_get_clean();
+
+        // require ob_get_clean(); -> Está dar erro com essa função
     }
 }
